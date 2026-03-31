@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noir Product | Clean Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <main class="page-shell">
+      <section class="hero" id="top">
+        <p class="eyebrow">BLACK &amp; WHITE EDITION</p>
+        <h1>One Product. One Page. One Clear Checkout.</h1>
+        <p class="hero-copy">
+          A minimal, professional landing page designed for focused conversions. No clutter,
+          no distracting colors, no unnecessary sections.
+        </p>
+        <a class="button" href="#checkout">Buy Now</a>
+      </section>
+
+      <section class="product" aria-label="Product details">
+        <div class="product-card reveal">
+          <h2>Product Details</h2>
+          <ul>
+            <li>Premium digital product delivery</li>
+            <li>Instant confirmation after payment</li>
+            <li>Built for desktop and mobile checkout</li>
+          </ul>
+          <p class="price">$49.00</p>
+        </div>
+      </section>
+
+      <section class="checkout reveal" id="checkout" aria-label="Checkout form">
+        <h2>Checkout</h2>
+        <p class="note">
+          Submit buyer details after payment. These details can be forwarded directly to your
+          Telegram bot.
+        </p>
+
+        <form id="checkoutForm" novalidate>
+          <div class="field-row">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="John Doe" required />
+          </div>
+
+          <div class="field-row">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="name@email.com" required />
+          </div>
+
+          <div class="field-row">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+1 555 000 0000" required />
+          </div>
+
+          <div class="field-row">
+            <label for="address">Billing Address</label>
+            <input id="address" name="address" type="text" placeholder="Street, City, Country" required />
+          </div>
+
+          <div class="field-row">
+            <label for="orderRef">Payment Reference / Transaction ID</label>
+            <input
+              id="orderRef"
+              name="orderRef"
+              type="text"
+              placeholder="e.g., TXN-2026-001"
+              required
+            />
+          </div>
+
+          <button class="button" type="submit">Send Order Details</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

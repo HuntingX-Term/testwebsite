@@ -1,0 +1,197 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --muted: #c7c7c7;
+  --line: rgba(255, 255, 255, 0.22);
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 24px;
+  overflow-x: hidden;
+}
+
+.page-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  border: 1px solid var(--fg);
+  border-radius: 22px;
+  padding: 32px;
+  background: linear-gradient(160deg, #080808, #000);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.hero,
+.product,
+.checkout {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  padding: 28px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+h1,
+h2 {
+  margin: 0.4rem 0 0.75rem;
+  line-height: 1.2;
+}
+
+.hero-copy,
+.note,
+li,
+label {
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 200ms ease, box-shadow 240ms ease, background-color 200ms ease;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.22);
+  background: #ececec;
+}
+
+.product {
+  margin-bottom: 20px;
+}
+
+.product-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  background: var(--panel-strong);
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.checkout form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.field-row {
+  display: grid;
+  gap: 6px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #111;
+  color: var(--fg);
+  padding: 11px 12px;
+  outline: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+input:focus {
+  border-color: var(--fg);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.16);
+}
+
+.form-message {
+  min-height: 1.2rem;
+  font-size: 0.94rem;
+}
+
+.form-message.success {
+  color: #fff;
+}
+
+.form-message.error {
+  color: #ffbdbd;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+  filter: blur(6px);
+  transition: left 120ms linear, top 120ms linear;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 680px) {
+  body {
+    padding: 14px;
+  }
+
+  .page-shell {
+    padding: 18px;
+  }
+
+  .hero,
+  .product,
+  .checkout {
+    padding: 18px;
+  }
+}
